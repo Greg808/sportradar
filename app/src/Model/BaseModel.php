@@ -14,12 +14,12 @@ class BaseModel
     private $id;
 
     /**
-     * @var DateTime
+     * @var string
      */
     private $createdAt;
 
     /**
-     * @var DateTime
+     * @var string
      */
     private $updatedAt;
     /**
