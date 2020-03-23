@@ -1,0 +1,21 @@
+{
+  "name": "gregorweindl/www",
+  "description": "Coding Exercise",
+  "license": "bsd3",
+  "authors": [
+    {
+      "name": "Gregor Weindl",
+      "email": "gregor-weindl@aon.at"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">7.3",
+    "ext-pdo": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "CodingExercise\\": "app/src"
+    }
+  }
+}
