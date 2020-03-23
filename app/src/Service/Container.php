@@ -46,12 +46,12 @@ class Container
     public function getEventsLoader()
     {
         if ($this->eventsLoader === null) {
-            $this->eventsLoader = new EventsLoader($this->getPdoEventsStorage());
+            $this->eventsLoader = new EventsLoader($this->getPDOEventsStorage());
         }
         return $this->eventsLoader;
 
     }
-    public function getPdoEventsStorage()
+    public function getPDOEventsStorage()
     {
         if ($this->pdoEventsStorage === null) {
             $this->pdoEventsStorage = new PDOEventsStorage($this->getPDO());
