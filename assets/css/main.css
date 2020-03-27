@@ -1,0 +1,81 @@
+/* Base styling*/
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-weight: 700;
+}
+
+/* Main nav styles*/
+.main-nav > ul {
+    list-style: none;
+    padding: 2rem;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    align-items: center;
+    background-color: #1b365d;
+}
+
+.main-nav > ul > li > a {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.8rem;
+    text-decoration: none;
+}
+
+.main-nav > ul > li > a:hover {
+    color: #DF465A;
+}
+
+.main-site-wrapper {
+    margin: 2rem;
+}
+
+.events-table > table {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    width: 100%;
+    max-width: 90rem;
+}
+
+.events-table thead,
+.events-table tbody,
+.events-table tr {
+    display: contents;
+}
+
+.events-table th,
+.events-table td {
+    padding: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.events-table th {
+    position: sticky;
+    top: 0;
+    background: #1b365d;
+    text-align: left;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.events-table a {
+    color: #df465a;
+}
+
+.events-table a:hover {
+    color: #1b365d;
+}
+
+.events-table tr:nth-child(even) td {
+    background: #f0f0f0;
+}
