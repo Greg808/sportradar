@@ -11,6 +11,10 @@ h1 {
 }
 
 /* Main nav styles*/
+.main-nav {
+    border-bottom: 0.3rem solid #DF465A;
+}
+
 .main-nav > ul {
     list-style: none;
     padding: 2rem;
@@ -20,6 +24,15 @@ h1 {
     grid-auto-rows: auto;
     align-items: center;
     background-color: #1b365d;
+    text-align: center;
+}
+
+.main-nav > ul > li {
+    border-right: 0.1rem solid #DF465A;
+}
+
+.main-nav > ul > li:last-child {
+    border-right: none;
 }
 
 .main-nav > ul > li > a {
@@ -27,6 +40,7 @@ h1 {
     font-weight: 700;
     font-size: 1.8rem;
     text-decoration: none;
+    text-transform: uppercase;
 }
 
 .main-nav > ul > li > a:hover {
@@ -66,6 +80,7 @@ h1 {
     font-weight: 700;
     font-size: 1.1rem;
     color: white;
+    border-bottom: 0.2rem solid #DF465A;
 }
 
 .events-table a {
@@ -78,4 +93,18 @@ h1 {
 
 .events-table tr:nth-child(even) td {
     background: #f0f0f0;
+}
+
+/* grouping-options*/
+
+.grouping-options > ul {
+    display: flex;
+    list-style: none;
+    text-align: left;
+    padding-left: 0;
+    width: auto;
+}
+
+.grouping-options > ul > li {
+    padding-right: 1rem;
 }
