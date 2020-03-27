@@ -259,4 +259,27 @@ class EventModel extends BaseModel
         $this->countryTitle = $countryTitle;
     }
 
+    public function getPlayDay(): string
+    {
+        $dateTime =$this->stringToDateTime($this->getEventStart());
+        return $dateTime->format('D');
+    }
+
+    public function getPlayDate(): string
+    {
+        $dateTime =$this->stringToDateTime($this->getEventStart());
+        return $dateTime->format('d.m.Y');
+    }
+
+    public function getPlayTime(): string
+    {
+        $dateTime =$this->stringToDateTime($this->getEventStart());
+        return $dateTime->format('H:i');
+    }
+
+    public function stringToDateTime(string $dateTimeString): DateTime
+    {
+        return new DateTime($dateTimeString);
+    }
+
 }
