@@ -6,7 +6,15 @@ require __DIR__ . '/bootstrap.php';
 
 $container = new Container($configuration);
 $eventsLoader = $container->getEventsLoader();
-$events = $eventsLoader->getEvents();
+if (isset($_GET['groupBySport'])) {
+    $groupBySports = strip_tags($_GET['groupBySport']);
+    /* convert string to boolean */
+    $groupBySports = $groupBySports === 'true' ? true : false;
+    $events = $eventsLoader->getEvents($groupBySports);
+}
+if (!isset($_GET['groupBySport'])) {
+    $events = $eventsLoader->getEvents();
+}
 
 ?>
 <!doctype html>
@@ -35,32 +43,43 @@ $events = $eventsLoader->getEvents();
     <main>
         <section class="events-table">
             <h1>Event Calendar</h1>
-            <table>
-                <thead>
-                <tr>
-                    <th>Day</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Sport</th>
-                    <th>Team One</th>
-                    <th>Team Two</th>
-                    <th></th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php foreach ($events as $event): ?>
-                    <tr>
-                        <td><?php echo $event->getPlayDay(); ?></td>
-                        <td><?php echo $event->getPlayDate(); ?></td>
-                        <td><?php echo $event->getPlayTime(); ?></td>
-                        <td><?php echo $event->getSportTitle(); ?></td>
-                        <td><?php echo $event->getTeamOneTitle(); ?></td>
-                        <td><?php echo $event->getTeamTwoTitle(); ?></td>
-                        <td><a href="">Show More</a></td>
-                    </tr>
+            <section class="grouping-options">
+                <ul>
+                    <li><a href="index.php?groupBySport=true">Group by Sport</a></li>
+                    <li><a href="index.php?groupBySport=false">Show all Events Inline</a></li>
+                </ul>
+            </section>
+            <!-- check if array sequential, display uncategorized -->
+            <?php if (count(array_filter(array_keys($events), 'is_string')) === 0) : ?>
+                <h2>All Sports</h2>
+                <table>
+                    <thead>
+                    <?php include './eventsTableHeadInclude.php' ?>
+                    </thead>
+                    <tbody>
+
+                    <?php foreach ($events as $event): ?>
+                        <?php include 'eventsTableBodyInclude.php'; ?>
+                    <?php endforeach; ?>
+                    </tbody>
+                </table>
+            <?php endif; ?>
+            <!-- check if array associative, display categorized -->
+            <?php if (count(array_filter(array_keys($events), 'is_string')) > 0) : ?>
+                <?php foreach ($events as $sport => $eventsData): ?>
+                    <h2><?php echo $sport ?></h2>
+                    <table>
+                        <thead>
+                        <?php include './eventsTableHeadInclude.php' ?>
+                        </thead>
+                        <tbody>
+                        <?php foreach ($eventsData as $event): ?>
+                            <?php include 'eventsTableBodyInclude.php'; ?>
+                        <?php endforeach; ?>
+                        </tbody>
+                    </table>
                 <?php endforeach; ?>
-                </tbody>
-            </table>
+            <?php endif; ?>
         </section>
     </main>
 </div>
