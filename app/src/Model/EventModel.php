@@ -76,7 +76,7 @@ class EventModel extends BaseModel
     }
 
     /**
-     * @param DateTime $eventStart
+     * @param string $eventStart
      */
     public function setEventStart($eventStart)
     {
@@ -84,7 +84,7 @@ class EventModel extends BaseModel
     }
 
     /**
-     * @return DateTime
+     * @return string
      */
     public function getEventEnd()
     {
@@ -92,7 +92,7 @@ class EventModel extends BaseModel
     }
 
     /**
-     * @param DateTime $eventEnd
+     * @param string $eventEnd
      */
     public function setEventEnd($eventEnd)
     {
@@ -242,4 +242,21 @@ class EventModel extends BaseModel
     {
         $this->countryId = $countryId;
     }
+
+    /**
+     * @return string
+     */
+    public function getCountryTitle(): string
+    {
+        return $this->countryTitle;
+    }
+
+    /**
+     * @param string $countryTitle
+     */
+    public function setCountryTitle(string $countryTitle)
+    {
+        $this->countryTitle = $countryTitle;
+    }
+
 }
