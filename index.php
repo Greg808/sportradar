@@ -49,6 +49,40 @@ if (!isset($_GET['groupBySport'])) {
                     <li><a href="index.php?groupBySport=false">Show all Events Inline</a></li>
                 </ul>
             </section>
+            <section class="filter-options">
+                <h2>Filter Options</h2>
+                <form action="." method="post" class="filter-form">
+                    <div class="filter-form-item">
+                        <label for="filter-form-date">Play Date:</label>
+                        <input type="date" id="filter-form-date" name="event_date">
+                    </div>
+                    <div class="filter-form-item">
+                        <label for="filter-form-sport">Sport:</label>
+                        <select id="filter-form-sport" name="event_sport">
+                            <option value="1">Football</option>
+                            <option value="2">Ice Hockey</option>
+                        </select>
+                    </div>
+                    <div class="filter-form-item">
+                        <label for="filter-form-team">Team:</label>
+                        <select id="filter-form-team" name="event_team">
+                            <option value="1">Salzburg</option>
+                            <option value="2">Sturm</option>
+                            <option value="5">Rapid</option>
+                            <option value="6">Austria</option>
+                            <option value="3">KAC</option>
+                            <option value="4">Capitals</option>
+                            <option value="7">Bulldogs</option>
+                            <option value="8">VSV</option>
+                        </select>
+                    </div>
+                    <div class="filter-form-buttons">
+                        <p>
+                            <button class="filter-form-submit-button" type="submit">Filter</button>
+                        </p>
+                    </div>
+                </form>
+            </section>
             <!-- check if array sequential, display uncategorized -->
             <?php if (count(array_filter(array_keys($events), 'is_string')) === 0) : ?>
                 <h2>All Sports</h2>
