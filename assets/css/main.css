@@ -10,6 +10,10 @@ h1 {
     font-weight: 700;
 }
 
+h2 {
+    font-weight: 400;
+}
+
 /* Main nav styles*/
 .main-nav {
     border-bottom: 0.3rem solid #b50010;
@@ -108,3 +112,44 @@ h1 {
 .grouping-options > ul > li {
     padding-right: 1rem;
 }
+
+.filter-form {
+    display: flex;
+}
+
+.filter-form > div {
+    flex-basis: auto;
+    margin-right: 1rem;
+}
+
+.filter-form > div > label {
+    margin-right: 0.5rem;
+}
+
+.filter-form-buttons > p {
+    margin: 0;
+}
+
+.filter-form-buttons > button {
+    background-color: #b50010;
+}
+
+.filter-form-submit-button {
+    background-color: #b50010;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+}
+
+.filter-form-submit-button:hover {
+    background-color: #1C304A;
+}
+
+.filter-form-item {
+    padding: 0.5rem 1rem;
+}
+
+.filter-form-item:first-child {
+    padding-left: 0;
+}
+
