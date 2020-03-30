@@ -15,17 +15,32 @@ class EventsLoader
      */
     private $eventsStorage;
 
+    /**
+     * EventsLoader constructor.
+     * @param PDOEventsStorage $eventsStorage
+     */
     public function __construct(PDOEventsStorage $eventsStorage)
     {
         $this->eventsStorage = $eventsStorage;
     }
 
-    public function getEvents()
+    /**
+     * @param bool $groupBySport
+     * @return array
+     */
+    public function getEvents(bool $groupBySport = false)
     {
         $eventsData = $this->eventsStorage->fetchAllEventsData();
         $events = [];
-        foreach ($eventsData as $eventData) {
-            $events[] = $this->creatEventModelFromData($eventData);
+        if ($groupBySport) {
+            foreach ($eventsData as $eventData) {
+                $events[$eventData['sport_title']][] = $this->creatEventModelFromData($eventData);
+            }
+        }
+        if (!$groupBySport) {
+            foreach ($eventsData as $eventData) {
+                $events[] = $this->creatEventModelFromData($eventData);
+            }
         }
         return $events;
     }
