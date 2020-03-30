@@ -79,7 +79,7 @@ class EventModel extends BaseModel
     /**
      * @param string $eventStart
      */
-    public function setEventStart(string $eventStart)
+    public function setEventStart($eventStart)
     {
         $this->eventStart = $eventStart;
     }
@@ -95,7 +95,7 @@ class EventModel extends BaseModel
     /**
      * @param string $eventEnd
      */
-    public function setEventEnd(string $eventEnd)
+    public function setEventEnd($eventEnd)
     {
         $this->eventEnd = $eventEnd;
     }
@@ -111,7 +111,7 @@ class EventModel extends BaseModel
     /**
      * @param bool $isCanceled
      */
-    public function setIsCanceled(bool $isCanceled)
+    public function setIsCanceled($isCanceled)
     {
         $this->isCanceled = $isCanceled;
     }
@@ -282,5 +282,4 @@ class EventModel extends BaseModel
     {
         return new DateTime($dateTimeString);
     }
-
 }

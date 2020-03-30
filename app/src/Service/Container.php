@@ -16,10 +16,12 @@ class Container
      * @var PDO
      */
     private $pdo;
+
     /**
      * @var EventsLoader
      */
     private $eventsLoader;
+
     /**
      * @var PDOEventsStorage
      */
@@ -51,6 +53,7 @@ class Container
         return $this->eventsLoader;
 
     }
+
     public function getPDOEventsStorage()
     {
         if ($this->pdoEventsStorage === null) {
@@ -58,5 +61,4 @@ class Container
         }
         return $this->pdoEventsStorage;
     }
-
 }
