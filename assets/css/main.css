@@ -12,7 +12,7 @@ h1 {
 
 /* Main nav styles*/
 .main-nav {
-    border-bottom: 0.3rem solid #DF465A;
+    border-bottom: 0.3rem solid #b50010;
 }
 
 .main-nav > ul {
@@ -23,12 +23,12 @@ h1 {
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: auto;
     align-items: center;
-    background-color: #1b365d;
+    background-color: #1C304A;
     text-align: center;
 }
 
 .main-nav > ul > li {
-    border-right: 0.1rem solid #DF465A;
+    border-right: 0.1rem solid #b50010;
 }
 
 .main-nav > ul > li:last-child {
@@ -41,10 +41,11 @@ h1 {
     font-size: 1.8rem;
     text-decoration: none;
     text-transform: uppercase;
+
 }
 
 .main-nav > ul > li > a:hover {
-    color: #DF465A;
+    color: #b50010;
 }
 
 .main-site-wrapper {
@@ -73,22 +74,21 @@ h1 {
 }
 
 .events-table th {
-    position: sticky;
     top: 0;
-    background: #1b365d;
+    background: #1C304A;
     text-align: left;
     font-weight: 700;
     font-size: 1.1rem;
-    color: white;
-    border-bottom: 0.2rem solid #DF465A;
+    color: #ffffff;
+    border-bottom: 0.2rem solid #b50010;
 }
 
 .events-table a {
-    color: #df465a;
+    color: #b50010;
 }
 
 .events-table a:hover {
-    color: #1b365d;
+    color: #1C304A;
 }
 
 .events-table tr:nth-child(even) td {
