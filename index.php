@@ -12,10 +12,10 @@ if (isset($_GET['groupBySport'])) {
     $groupBySports = $groupBySports === 'true' ? true : false;
     $events = $eventsLoader->getEvents($groupBySports);
 }
+
 if (!isset($_GET['groupBySport'])) {
     $events = $eventsLoader->getEvents();
 }
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -43,12 +43,15 @@ if (!isset($_GET['groupBySport'])) {
     <main>
         <section class="events-table">
             <h1>Event Calendar</h1>
+            <!--  works -->
             <section class="grouping-options">
+                <h2>Grouping Options</h2>
                 <ul>
                     <li><a href="index.php?groupBySport=true">Group by Sport</a></li>
                     <li><a href="index.php?groupBySport=false">Show all Events Inline</a></li>
                 </ul>
             </section>
+            <!-- just an indication -->
             <section class="filter-options">
                 <h2>Filter Options</h2>
                 <form action="." method="post" class="filter-form">
@@ -83,7 +86,7 @@ if (!isset($_GET['groupBySport'])) {
                     </div>
                 </form>
             </section>
-            <!-- check if array sequential, display uncategorized -->
+            <!-- if array is sequential, display uncategorized -->
             <?php if (count(array_filter(array_keys($events), 'is_string')) === 0) : ?>
                 <h2>All Sports</h2>
                 <table>
@@ -98,7 +101,7 @@ if (!isset($_GET['groupBySport'])) {
                     </tbody>
                 </table>
             <?php endif; ?>
-            <!-- check if array associative, display categorized -->
+            <!-- if array is associative, display categorized -->
             <?php if (count(array_filter(array_keys($events), 'is_string')) > 0) : ?>
                 <?php foreach ($events as $sport => $eventsData): ?>
                     <h2><?php echo $sport ?></h2>
