@@ -1,10 +1,6 @@
 <?php
 
-
 namespace CodingExercise\Model;
-
-
-use DateTime;
 
 class BaseModel
 {
@@ -40,7 +36,7 @@ class BaseModel
     /**
      * @return int
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -54,15 +50,15 @@ class BaseModel
     }
 
     /**
-     * @return DateTime
+     * @return string
      */
-    public function getCreatedAt()
+    public function getCreatedAt(): string
     {
         return $this->createdAt;
     }
 
     /**
-     * @param DateTime $createdAt
+     * @param string $createdAt
      */
     public function setCreatedAt($createdAt)
     {
@@ -70,15 +66,15 @@ class BaseModel
     }
 
     /**
-     * @return DateTime
+     * @return string
      */
-    public function getUpdatedAt()
+    public function getUpdatedAt(): string
     {
         return $this->updatedAt;
     }
 
     /**
-     * @param DateTime $updatedAt
+     * @param string $updatedAt
      */
     public function setUpdatedAt($updatedAt)
     {
@@ -88,7 +84,7 @@ class BaseModel
     /**
      * @return string
      */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -104,7 +100,7 @@ class BaseModel
     /**
      * @return string
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -120,7 +116,7 @@ class BaseModel
     /**
      * @return bool
      */
-    public function isActive()
+    public function isActive(): bool
     {
         return $this->isActive;
     }
