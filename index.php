@@ -25,8 +25,8 @@ if (!isset($_GET['groupBySport'])) {
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>sportradar challenge</title>
-    <link rel="stylesheet" type="text/css" href="./assets/css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./assets/css/main.css">
 </head>
 <body>
 <header class="site-header">
