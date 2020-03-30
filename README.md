@@ -4,6 +4,7 @@
 1. Create DataBase import sql from the resources folder `resources/sportradar.sql` 
 2. Clone or Copy [Exercise Repo](https://github.com/Greg808/sportradar)
 3. Set Database credentials in `bootstrap.php`
+4. I use composer autoload so please run `composer install`
 
 ## ERD 
 
