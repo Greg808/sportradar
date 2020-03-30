@@ -9,12 +9,12 @@ use DateTime;
 class EventModel extends BaseModel
 {
     /**
-     * @var DateTime
+     * @var string
      */
     private $eventStart;
 
     /**
-     * @var DateTime
+     * @var string
      */
     private $eventEnd;
 
@@ -32,6 +32,7 @@ class EventModel extends BaseModel
      * @var integer
      */
     private $sportId;
+
     /**
      * @var string
      */
@@ -68,9 +69,9 @@ class EventModel extends BaseModel
     private $countryTitle;
 
     /**
-     * @return DateTime
+     * @return string
      */
-    public function getEventStart()
+    public function getEventStart(): string
     {
         return $this->eventStart;
     }
@@ -78,7 +79,7 @@ class EventModel extends BaseModel
     /**
      * @param string $eventStart
      */
-    public function setEventStart($eventStart)
+    public function setEventStart(string $eventStart)
     {
         $this->eventStart = $eventStart;
     }
@@ -86,7 +87,7 @@ class EventModel extends BaseModel
     /**
      * @return string
      */
-    public function getEventEnd()
+    public function getEventEnd(): string
     {
         return $this->eventEnd;
     }
@@ -94,7 +95,7 @@ class EventModel extends BaseModel
     /**
      * @param string $eventEnd
      */
-    public function setEventEnd($eventEnd)
+    public function setEventEnd(string $eventEnd)
     {
         $this->eventEnd = $eventEnd;
     }
@@ -102,7 +103,7 @@ class EventModel extends BaseModel
     /**
      * @return bool
      */
-    public function isCanceled()
+    public function isCanceled(): bool
     {
         return $this->isCanceled;
     }
@@ -110,7 +111,7 @@ class EventModel extends BaseModel
     /**
      * @param bool $isCanceled
      */
-    public function setIsCanceled($isCanceled)
+    public function setIsCanceled(bool $isCanceled)
     {
         $this->isCanceled = $isCanceled;
     }
@@ -118,7 +119,7 @@ class EventModel extends BaseModel
     /**
      * @return string
      */
-    public function getResult()
+    public function getResult(): string
     {
         return $this->result;
     }
@@ -134,7 +135,7 @@ class EventModel extends BaseModel
     /**
      * @return int
      */
-    public function getSportId()
+    public function getSportId(): int
     {
         return $this->sportId;
     }
@@ -150,7 +151,7 @@ class EventModel extends BaseModel
     /**
      * @return string
      */
-    public function getSportTitle()
+    public function getSportTitle(): string
     {
         return $this->sportTitle;
     }
@@ -166,7 +167,7 @@ class EventModel extends BaseModel
     /**
      * @return int
      */
-    public function getTeamOneId()
+    public function getTeamOneId(): int
     {
         return $this->teamOneId;
     }
@@ -182,7 +183,7 @@ class EventModel extends BaseModel
     /**
      * @return string
      */
-    public function getTeamOneTitle()
+    public function getTeamOneTitle(): string
     {
         return $this->teamOneTitle;
     }
@@ -198,7 +199,7 @@ class EventModel extends BaseModel
     /**
      * @return int
      */
-    public function getTeamTwoId()
+    public function getTeamTwoId(): int
     {
         return $this->teamTwoId;
     }
@@ -214,7 +215,7 @@ class EventModel extends BaseModel
     /**
      * @return string
      */
-    public function getTeamTwoTitle()
+    public function getTeamTwoTitle(): string
     {
         return $this->teamTwoTitle;
     }
@@ -230,7 +231,7 @@ class EventModel extends BaseModel
     /**
      * @return int
      */
-    public function getCountryId()
+    public function getCountryId(): int
     {
         return $this->countryId;
     }
@@ -254,26 +255,26 @@ class EventModel extends BaseModel
     /**
      * @param string $countryTitle
      */
-    public function setCountryTitle(string $countryTitle)
+    public function setCountryTitle($countryTitle)
     {
         $this->countryTitle = $countryTitle;
     }
 
     public function getPlayDay(): string
     {
-        $dateTime =$this->stringToDateTime($this->getEventStart());
+        $dateTime = $this->stringToDateTime($this->getEventStart());
         return $dateTime->format('D');
     }
 
     public function getPlayDate(): string
     {
-        $dateTime =$this->stringToDateTime($this->getEventStart());
+        $dateTime = $this->stringToDateTime($this->getEventStart());
         return $dateTime->format('d.m.Y');
     }
 
     public function getPlayTime(): string
     {
-        $dateTime =$this->stringToDateTime($this->getEventStart());
+        $dateTime = $this->stringToDateTime($this->getEventStart());
         return $dateTime->format('H:i');
     }
 
