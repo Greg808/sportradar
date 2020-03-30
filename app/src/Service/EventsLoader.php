@@ -45,6 +45,10 @@ class EventsLoader
         return $events;
     }
 
+    /**
+     * @param array $eventData
+     * @return EventModel
+     */
     private function creatEventModelFromData(array $eventData): EventModel
     {
         $event = new EventModel();
